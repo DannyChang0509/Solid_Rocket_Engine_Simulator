@@ -19,6 +19,7 @@ def reset():
     e_Pa.delete(0, "end")
     e_epislon.delete(0, "end")
     e_gama.delete(0, "end")
+    e_time_step.delete(0, "end")
 
 
 Time = []
