@@ -58,9 +58,7 @@ def plot():
 
     canvas1 = FigureCanvasTkAgg(f1, master=Port_plot)
     canvas1.draw()
-    canvas1.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
-    )
+    canvas1.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     f2 = Figure(figsize=(3, 2), dpi=100)
     b = f2.add_subplot(111)
@@ -68,9 +66,7 @@ def plot():
 
     canvas2 = FigureCanvasTkAgg(f2, master=Pc_plot)
     canvas2.draw()
-    canvas2.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
-    )
+    canvas2.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     f3 = Figure(figsize=(3, 2), dpi=100)
     c = f3.add_subplot(111)
@@ -78,9 +74,7 @@ def plot():
 
     canvas3 = FigureCanvasTkAgg(f3, master=r_dot_plot)
     canvas3.draw()
-    canvas3.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
-    )
+    canvas3.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     f4 = Figure(figsize=(3, 2), dpi=100)
     d = f4.add_subplot(111)
@@ -88,9 +82,7 @@ def plot():
 
     canvas4 = FigureCanvasTkAgg(f4, master=CF_plot)
     canvas4.draw()
-    canvas4.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
-    )
+    canvas4.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     f5 = Figure(figsize=(3, 2), dpi=100)
     e = f5.add_subplot(111)
@@ -98,9 +90,7 @@ def plot():
 
     canvas5 = FigureCanvasTkAgg(f5, master=F_plot)
     canvas5.draw()
-    canvas5.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
-    )
+    canvas5.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     f6 = Figure(figsize=(3, 2), dpi=100)
     f = f6.add_subplot(111)
@@ -108,8 +98,54 @@ def plot():
 
     canvas6 = FigureCanvasTkAgg(f1, master=Isp_plot)
     canvas6.draw()
-    canvas6.get_tk_widget().pack(
-        side=tkinter.TOP, fill=tkinter.BOTH, expand=tkinter.YES
+    canvas6.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+
+    toolbar1 = NavigationToolbar2Tk(canvas1, Port_plot)
+    toolbar1.update()
+    canvas1._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
+    )
+
+    toolbar2 = NavigationToolbar2Tk(canvas2, Pc_plot)
+    toolbar2.update()
+    canvas2._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
+    )
+
+    toolbar3 = NavigationToolbar2Tk(canvas3, r_dot_plot)
+    toolbar3.update()
+    canvas3._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
+    )
+
+    toolbar4 = NavigationToolbar2Tk(canvas4, CF_plot)
+    toolbar4.update()
+    canvas4._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
+    )
+
+    toolbar5 = NavigationToolbar2Tk(canvas5, F_plot)
+    toolbar5.update()
+    canvas5._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
+    )
+
+    toolbar6 = NavigationToolbar2Tk(canvas6, Isp_plot)
+    toolbar6.update()
+    canvas6._tkcanvas.pack(
+        side=tkinter.TOP,
+        fill=tkinter.BOTH,
+        expand=1,
     )
 
 
@@ -290,7 +326,7 @@ def calculate():
 
 window = tk.Tk()
 window.title("Solid Rocket Engine Simulator")
-window.geometry("1200x700")
+window.geometry("1200x750")
 
 parameter_frame = tk.Frame(window)
 parameter_frame.pack(padx=20, pady=20)
@@ -358,6 +394,6 @@ CF_plot.grid(row=3, column=0, padx=10)
 F_plot.grid(row=3, column=1, padx=10)
 Isp_plot.grid(row=3, column=2, padx=10)
 
-tk.Label(window, text="Designer: 張詠翔").place(x=1100, y=680)
+tk.Label(window, text="Designer: 張詠翔").place(x=1100, y=730)
 
 window.mainloop()
